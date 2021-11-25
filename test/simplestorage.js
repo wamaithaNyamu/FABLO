@@ -5,7 +5,7 @@ contract("SimpleStorage", accounts => {
     const simpleStorageInstance = await SimpleStorage.deployed();
 
     // Set value of 89
-    await simpleStorageInstance.set(89, { from: accounts[0] });
+    await simpleStorageInstance.set('89', { from: accounts[0] });
 
     // Get stored value
     const storedData = await simpleStorageInstance.get.call();

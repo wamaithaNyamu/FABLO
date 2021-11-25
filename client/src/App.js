@@ -41,6 +41,7 @@ const QR =()=>{
   }
   const handleErrorWebCam = (error) => {
     console.log(error);
+    alert("Something went wrong when scanning the QR code")
   }
   const handleScanWebCam =async (result) => {
     if (result){
@@ -53,7 +54,6 @@ const QR =()=>{
         await contract.methods.set(a).send({from: accounts[0]});
         const response = await contract.methods.get().call();
         console.log('response new', response)
-
         setStorageValue(response);
         setScanResultWebCam(result);
 
